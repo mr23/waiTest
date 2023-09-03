@@ -1,7 +1,7 @@
 FROM adoptopenjdk:11-jdk-hotspot-bionic AS build
 WORKDIR /app
 COPY . .
-RUN get apt update && apt-get install -y maven
+RUN apt-get update && apt-get install -y maven
 RUN mvn clean package -DskipTests
 
 FROM adoptopenjdk:11-jdk-hotspot-bionic
